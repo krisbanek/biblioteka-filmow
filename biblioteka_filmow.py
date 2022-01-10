@@ -88,22 +88,26 @@ def generate_views():
     print(f"{r} views: {r.views}")
      
 
-
 def ten_generate_views():
     for i in range(10):
         generate_views()
 
-#print(simpsons21)
-#print(bluesbrothers)
+top_titles_dict = {}
+def top_titles():
+    for a in library:
+        top_titles_dict[f"{a}"] = [a.views]
+    top_titles_list = sorted(top_titles_dict.items(), key = lambda x: x[1], reverse=True)
+    return print(top_titles_list[0:l])
+if __name__ == "__main__":
+    l = int(input("Podaj proszę wybraną ilość najpopularniejszych tytułów: "))
+    top_titles()
 
-#print(simpsons23.views)
-#simpsons21.play()
-#print(simpsons21.views)
-#get_movies()
-#get_series()
-#search(t)
-#generate_views()
-#ten_generate_views()
 
-for j in library:
-    print(f"{j.title} {j.views}")
+
+print("Biblioteka filmów")
+get_movies()
+get_series()
+ten_generate_views()
+import time
+print("Najpopularniejsze filmy i seriale dnia",time.strftime("%d:%m:%Y", time.localtime()))
+top_titles()
