@@ -115,18 +115,15 @@ library = [bluesbrothers, greenbook, diune, diehard, simpsons11, simpsons12, sim
 #*************** functions if __name__ == '__main__' for search & top_titles:
 
 if __name__ == '__main__':
-    q = input("Podaj proszę szukany tytuł: ")
-    search(q)    
-if __name__ == '__main__':
+    q = input("Podaj proszę szukany tytuł: ")  
     l = int(input("Podaj proszę wybraną ilość najpopularniejszych tytułów: "))
-    top_titles(l)
-
-if __name__ == '__main__':
     t = input("Podaj tytuł serialu: ")
     y = int(input("Podaj rok produkcji: "))
     g = input("Podaj gatunek: ")
     a = int(input("Podaj ilość odcinków: "))
     s = int(input("Podaj numer serii: "))
+    search(q)
+    top_titles(l) 
     create_series(a)
 
 #**************** functions executive:
